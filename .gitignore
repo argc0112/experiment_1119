@@ -1,0 +1,14 @@
+# Codex: keep shareable configuration, custom skills, and command rules only.
+/.codex/*
+!/.codex/config.toml
+!/.codex/skills/
+!/.codex/rules/
+
+# Built-in skills are supplied by Codex.
+/.codex/skills/.system/
+
+# Local artifacts within shared skills and rules.
+/.codex/skills/**/__pycache__/
+/.codex/skills/**/*.pyc
+/.codex/skills/**/.DS_Store
+/.codex/rules/**/.DS_Store

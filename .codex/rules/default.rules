@@ -1,0 +1,4 @@
+prefix_rule(pattern=["/bin/zsh", "-lc", "for repo in openai/gdpval ArtificialAnalysis/AA-Briefcase-Lite ArtificialAnalysis/AA-Omniscience-Public ArtificialAnalysis/AA-LCR; do name=${repo##*/}; curl -L --fail --silent --show-error \"https://huggingface.co/api/datasets/$repo\" -o \"/tmp/$name-info.json\"; echo \"$repo\"; jq -r '.siblings[] | [.size,.rfilename] | @tsv' \"/tmp/$name-info.json\" | sort -n; done"], decision="allow")
+prefix_rule(pattern=["curl", "-L", "--fail", "--silent", "--show-error", "--head", "https://huggingface.co/datasets/ArtificialAnalysis/AA-Briefcase-Lite/resolve/main/tasks.jsonl"], decision="allow")
+prefix_rule(pattern=["curl", "-L", "--fail", "--silent", "--show-error", "--head", "https://huggingface.co/datasets/ArtificialAnalysis/AA-Briefcase-Lite/resolve/main/checks.jsonl"], decision="allow")
+prefix_rule(pattern=["curl", "-L"], decision="allow")
