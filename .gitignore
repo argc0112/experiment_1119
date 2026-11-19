@@ -1,4 +1,4 @@
-# Codex: keep shareable configuration, custom skills, and command rules only.
+# Codex: keep shareable configuration, custom skills, rules, and selected plugins.
 /.codex/*
 !/.codex/config.toml
 !/.codex/skills/
@@ -12,3 +12,25 @@
 /.codex/skills/**/*.pyc
 /.codex/skills/**/.DS_Store
 /.codex/rules/**/.DS_Store
+
+# Allow only the seven selected plugin packages.
+!/.codex/plugins/
+/.codex/plugins/*
+!/.codex/plugins/cache/
+/.codex/plugins/cache/*
+!/.codex/plugins/cache/openai-primary-runtime/
+!/.codex/plugins/cache/openai-bundled/
+/.codex/plugins/cache/openai-primary-runtime/*
+/.codex/plugins/cache/openai-bundled/*
+!/.codex/plugins/cache/openai-primary-runtime/documents/
+!/.codex/plugins/cache/openai-primary-runtime/spreadsheets/
+!/.codex/plugins/cache/openai-primary-runtime/presentations/
+!/.codex/plugins/cache/openai-primary-runtime/pdf/
+!/.codex/plugins/cache/openai-primary-runtime/template-creator/
+!/.codex/plugins/cache/openai-bundled/browser/
+!/.codex/plugins/cache/openai-bundled/visualize/
+
+# Do not include generated local artifacts within plugin packages.
+/.codex/plugins/cache/**/__pycache__/
+/.codex/plugins/cache/**/*.pyc
+/.codex/plugins/cache/**/.DS_Store
